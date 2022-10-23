@@ -91,7 +91,7 @@ async def github(request : Request, response : Response):
 
     # order by latest, max 4096 chars in embed desc
     entries.reverse()
-    chunks = list(chunk_text(entries, 4096))
+    chunks = chunk_text(entries, 4096)
 
     embeds = [
       {
@@ -100,9 +100,13 @@ async def github(request : Request, response : Response):
           'url' : owner_url,
           'icon_url' : owner_avatar
         },
-        'title' : '[{}:{}] {} new commits {}'.format(
+        'title' : '[{}:{}] {} new commit{} {}'.format(
           owner_repo, 
           branch, 
+          (
+            '' if len(entries) == 1
+            else 's'
+          ),
           len(entries),
           (
             '' if len(chunks) == 1

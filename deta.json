@@ -1,0 +1,16 @@
+{
+	"name": "github_discord_webhook",
+	"description": "Relay server that shows more commit info",
+	"env": [
+		{
+			"key": "DISCORD_WEBHOOK_URL",
+			"description": "Discord Webhook URL",
+			"required": true
+		},
+		{
+			"key": "GITHUB_ACCESS_TOKEN",
+			"description": "Github Access Token",
+			"required": false
+		}
+	]
+}

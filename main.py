@@ -57,7 +57,10 @@ async def get_commit(session, user_repo, commit_id):
 async def github(request : Request, response : Response):
   data = await request.json()
   
-  user_repo = data['repository']['full_name']
+  owner_name = data['repository']['owner']['name']
+  owner_avatar = data['repository']['owner']['avatar_url']
+  owner_url = data['repository']['owner']['html_url']
+  owner_repo = data['repository']['full_name']
   branch = data['ref'].split('/')[-1]
   head_url = data['head_commit']['url']
   commit_ids = [
@@ -67,7 +70,7 @@ async def github(request : Request, response : Response):
   
   async with aiohttp.ClientSession() as session:
     commits = await asyncio.gather(*[
-      get_commit(session, user_repo, commit_id)
+      get_commit(session, owner_repo, commit_id)
       for commit_id in commit_ids
     ])
 
@@ -92,8 +95,13 @@ async def github(request : Request, response : Response):
 
     embeds = [
       {
+        'author': {
+          'name' : owner_name,
+          'url' : owner_url,
+          'icon_url' : owner_avatar
+        },
         'title' : '[{}:{}] {} new commits {}'.format(
-          user_repo, 
+          owner_repo, 
           branch, 
           len(entries),
           (
@@ -116,6 +124,8 @@ async def github(request : Request, response : Response):
     
     payloads = [
       {
+        'username' : 'Github',
+        'avatar_url' : 'https://cdn.discordapp.com/avatars/1025786498945138779/df91181b3f1cf0ef1592fbe18e0962d7.webp',
         'embeds' : embeds
       }
       for embeds in chunks

@@ -4,8 +4,8 @@ import aiohttp
 from fastapi import FastAPI, Request, Response, status
 
 app = FastAPI()
-token = os.getenv('GITHUB_ACCESS_TOKEN', None)
 webhook = os.getenv('DISCORD_WEBHOOK_URL')
+token = os.getenv('GITHUB_ACCESS_TOKEN', None)
 base_url = 'https://api.github.com/repos/{}/commits/{}'
 headers = {'Authorization' : 'Bearer {}'.format(token)} if token else None
 

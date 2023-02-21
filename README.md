@@ -1,3 +1,6 @@
+# FEB 14 2023 UPDATE: Deta Cloud moved to Deta Space
+This guide is partially broken. The code still works but the steps for deploying/hosting is different. Use https://github.com/imptype/deta-space-fastapi-example for the updated steps, and you'll need to modify the `Spacefile` to include the environment variables (check the [docs](https://deta.space/docs/en/reference/spacefile)).
+
 ## Information
 This is a relay server that shows more commit info for Discord webhooks.
 

@@ -1,0 +1,15 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 1
+micros:
+  - name: github-discord-webhook
+    src: .
+    engine: python3.9
+    primary: true
+    public_routes:
+      - '/**'
+    presets:
+      env:
+        - name: DISCORD_WEBHOOK_URL
+          description: Discord Webhook URL
+        - name: GITHUB_ACCESS_TOKEN
+          description: Github Access Token

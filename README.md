@@ -27,6 +27,4 @@ Demo: https://i.imgur.com/nyqJfSx.png
    - URL can be found/opened by clicking on your app in https://deta.space.
      
 ## Deploy
-Click the following button to deploy this Micro in your own Deta project:
-
-[![Deploy](https://button.deta.dev/1/svg)](https://go.deta.dev/deploy)
+Coming soon to Discovery...?

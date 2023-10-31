@@ -25,6 +25,7 @@ Demo: https://i.imgur.com/nyqJfSx.png
 8. Set the repo's `push` event webhook to point to this page of the app's URL: [https://{app_name}-1-{a1234567}.deta.space/github](https://deta.soace)
    - Repo settings -> Webhooks -> Add new webhook -> Write in `Payload URL`
    - URL can be found/opened by clicking on your app in https://deta.space.
+   - And change the webhook's `Content type` to `application/json`.
      
 ## Deploy
 Coming soon to Discovery...?

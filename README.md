@@ -7,7 +7,8 @@ The webhook is exactly like the [Discord's Github-Compatible webhook](https://di
 - Can show info for up to [around 5000 commits](https://docs.github.com/en/developers/apps/building-github-apps/rate-limits-for-github-apps) instead of max 5 per push.
 - Repository's owner name in the embed's title.
 
-Demo: https://i.imgur.com/nyqJfSx.png
+## Demo
+![](https://i.imgur.com/nyqJfSx.png)
 
 ## Running
 1. Run `git clone https://github.com/imptype/github-discord-webhook` to clone this repository.
